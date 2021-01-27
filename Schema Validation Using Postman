@@ -1,0 +1,29 @@
+//Schema validation
+
+var resp = pm.response.json();
+
+var schema = 
+{
+// define your schema here, convert your response into schema using https://jsonschema.net/
+}
+
+
+pm.test('Schema is valid', function(){
+ pm.response.to.have.jsonSchema(schema);
+});
+
+
+//Schema validation of the subset of the response using ajv
+
+var samplesubsetschema = 
+{
+  //define the schema of the partial response you need to validate
+}
+
+var sampleresp = resp.vaultIds;
+
+pm.test('Schema validation using Ajv', function(){
+    var Ajv = require('ajv');
+    ajv = new Ajv({logger: console});
+     pm.expect(ajv.validate(samplesubsetschema,sampleresp));
+});
