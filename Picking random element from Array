@@ -1,0 +1,42 @@
+//user defined arrays
+
+var Cities = ["San Francisco", "San Diego", "Boston"];
+
+pm.environment.set('Cities',Cities);
+
+pm.environment.set("CITY", Cities[Math.floor(Math.random() * Cities.length)]);
+
+
+////based on the response, generating an array
+//sample response
+{
+    "current_page": 1,
+    "limit": 20,
+    "next_page": 1,
+    "previous_page": 1,
+    "results": [
+        {
+            "id": "n3gVSC5oOmb",
+            "joke": "What's black and white and read all over? The newspaper."
+        },
+        {
+            "id": "obhFBljb2g",
+            "joke": "I adopted my dog from a blacksmith. As soon as we got home he made a bolt for the door."
+        }
+    ],
+    "search_term": "black",
+    "status": 200,
+    "total_jokes": 2,
+    "total_pages": 1
+}
+
+//Array to hold the Jokes
+JokeArr = [];
+pm.environment.set("JokeArr", JokeArr);
+
+for (var i=0; i<resp.results.length; i++)
+{
+    JokeArr.push(`${resp.results[i].id}`);
+    //console.log(JokeArr);
+}
+pm.environment.set("Joke_ID", JokeArr[Math.floor(Math.random() * JokeArr.length)]);
