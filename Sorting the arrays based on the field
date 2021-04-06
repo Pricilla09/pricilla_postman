@@ -7,12 +7,3 @@ console.log(sortedObjs);
 pm.test('order by Test', function() {
 pm.expect(arr).to.eql(sortedObjs);
 });
-
-pm.test("Address is not present", () => {
-    if (!resp.hasOwnProperty("address")) {
-        pm.expect(!resp.hasOwnProperty("address")).to.equal(true)
-    }
-    else {
-        pm.expect.fail('Address is present')
-    }
-})
