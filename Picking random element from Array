@@ -30,13 +30,15 @@ pm.environment.set("CITY", Cities[Math.floor(Math.random() * Cities.length)]);
     "total_pages": 1
 }
 
-//Array to hold the Jokes
-JokeArr = [];
+//under tests section
+var resp = pm.response.json();
+console.log(resp);
+JokeArr = []; //initialzing the array
 pm.environment.set("JokeArr", JokeArr);
 
 for (var i=0; i<resp.results.length; i++)
 {
-    JokeArr.push(`${resp.results[i].id}`);
+    JokeArr.push(`${resp.results[i].id}`); //push method will add the individual Jokeid's to the end of the array
     //console.log(JokeArr);
 }
 pm.environment.set("Joke_ID", JokeArr[Math.floor(Math.random() * JokeArr.length)]);
