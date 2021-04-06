@@ -1,0 +1,44 @@
+const moment = require('moment');
+pm.globals.set("timestamp", moment().format("MM/DD/YYYY hh:mm:ss"));
+
+
+//Get a randompast date
+pm.globals.set("today", moment().format("YYYYMMDD"));
+
+pm.environment.set("randompastdate", pm.variables.replaceIn('{{$randomDatePast}}'));
+ let pastdate = pm.environment.get("randompastdate");
+pastdate = moment(pastdate);
+pm.environment.set("pastdate", pastdate.format("YYYYMMDD"));
+
+//console.log(pastdate().format("YYYYMMDD"));
+
+//Set yesterday's date
+var pdate = new Date();
+pdate.setDate(pdate.getDate()-1);
+pastdate = moment(pdate);
+pm.environment.set("pastdate", pastdate.format("YYYYMMDD"));
+
+//To get weekday dates for a field
+const moment = require('moment');
+var myDate = new Date();
+console.log(myDate);
+//console.log(myDate.getDay());
+if(myDate.getDay() == 6)
+{
+console.log("It's Saturday!!");
+}
+if(myDate.getDay() == 0)
+{
+console.log("It's Sunday!!");
+}
+if(myDate.getDay() == 1)
+{
+console.log("It's Monday!!");
+pm.collectionVariables.set("data_date", moment().subtract(3, 'day').format("YYYY-MM-DD"));
+}
+else{ 
+console.log("It's Weekday!!");
+pm.collectionVariables.set("data_date", moment().subtract(1, 'day').format("YYYY-MM-DD"));
+}
+
+
