@@ -1,0 +1,459 @@
+{
+	"info": {
+		"_postman_id": "0033b83a-ccb4-49a2-9194-43b3cb4fe9a1",
+		"name": "Working with GraphQL",
+		"description": "Frequently called an advanced REST client, Postman is actually a tool that handles any calls sent over HTTP. This means that you can use Postman to send [SOAP requests](https://blog.getpostman.com/2017/11/18/postman-makes-soap-requests-too/) or GraphQL queries. There are other templates that explain [how to work with SOAP](https://documenter.getpostman.com/view/1559645/RWgtScW1). This template here contains examples of how you can use Postman to work with GraphQL.\n\nCheck out [the collection documentation](https://documenter.getpostman.com/view/1559645/S1Lu2puC) for screenshots and step-by-step instructions.\n\nUsing this template, learn how to:\n1. Use a JSON request body\n2. Use header `Content-type: application/graphql`\n3. Import a graphQL query as a cURL command\n4. Use built-in support for GraphQL\n\n> Postman launched [built-in support for GraphQL](https://github.com/postmanlabs/postman-app-support/issues/1669#issuecomment-487569592) in version 7.2. \n\nOther helpful resources:\n* [REST, SOAP, GraphQL — Gesundheit!](https://medium.com/better-practices/rest-soap-graphql-gesundheit-6544053f65cf)\n* [GraphQL vs REST: Overview](https://philsturgeon.uk/api/2017/01/24/graphql-vs-rest-overview/)\n* [Public GraphQL APIs](https://github.com/APIs-guru/graphql-apis)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Using JSON request body",
+			"_postman_id": "aff6767a-a556-4665-bafa-7dcb9463bb82",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"query\" : \"query { allFilms { films { id title episodeID } } }\"\n}",
+					"options": {}
+				},
+				"url": "https://swapi.apis.guru",
+				"description": "From [this community tutorial](https://www.codetraveler.io/2019/01/12/how-to-use-postman-with-a-graphql-api/), we learn that each GraphQL endpoint is a `POST` API, and its request body is a `JSON` object containing a key called `query` that has the value of your query.\n\nUnder the **Body** tab, select the `raw` type with `JSON (application/json)` format. Construct your query here in the request body using proper JSON formatting.\n\n![[JSON object containing query](https://i.imgur.com/x9MriXU.png)](https://i.imgur.com/x9MriXU.png)\n\nYou can also use optional query parameters like `operationName` or `variables`. Review [more guidelines for setting up a GraphQL server to operate over HTTP](https://graphql.org/learn/serving-over-http/)."
+			},
+			"response": [
+				{
+					"id": "e86199bf-ab8a-4128-9d68-673a16b08b14",
+					"name": "Successful response",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"query\" : \"query { allFilms { films { id title episodeID } } }\"\n}"
+						},
+						"url": "https://swapi.apis.guru"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Cowboy"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET,PUT,POST,DELETE,OPTIONS"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Content-Type, Authorization, Content-Length, X-Requested-With"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "423"
+						},
+						{
+							"key": "Etag",
+							"value": "W/\"1a7-Q2yB9EcgmVSORKM35UT6aw\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 07 May 2019 00:14:36 GMT"
+						},
+						{
+							"key": "Via",
+							"value": "1.1 vegur"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "{\n    \"data\": {\n        \"allFilms\": {\n            \"films\": [\n                {\n                    \"id\": \"ZmlsbXM6MQ==\",\n                    \"title\": \"A New Hope\",\n                    \"episodeID\": 4\n                },\n                {\n                    \"id\": \"ZmlsbXM6Mg==\",\n                    \"title\": \"The Empire Strikes Back\",\n                    \"episodeID\": 5\n                },\n                {\n                    \"id\": \"ZmlsbXM6Mw==\",\n                    \"title\": \"Return of the Jedi\",\n                    \"episodeID\": 6\n                },\n                {\n                    \"id\": \"ZmlsbXM6NA==\",\n                    \"title\": \"The Phantom Menace\",\n                    \"episodeID\": 1\n                },\n                {\n                    \"id\": \"ZmlsbXM6NQ==\",\n                    \"title\": \"Attack of the Clones\",\n                    \"episodeID\": 2\n                },\n                {\n                    \"id\": \"ZmlsbXM6Ng==\",\n                    \"title\": \"Revenge of the Sith\",\n                    \"episodeID\": 3\n                }\n            ]\n        }\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Using GraphQL query",
+			"_postman_id": "23f470f9-51c4-4b7a-86b2-7fcce3b7b8fc",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/graphql",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "query{\n  allFilms\n  {\n   films {\n      id\n      title\n      episodeID\n    }\n  }\n}",
+					"options": {}
+				},
+				"url": "https://swapi.apis.guru",
+				"description": "Similar to the previous example from [this community tutorial](https://www.codetraveler.io/2019/01/12/how-to-use-postman-with-a-graphql-api/), we learn that if the GraphQL endpoint accepts the header `application/graphql`, then we don't need to use JSON in the request body.\n\nAdd the header `Content-type: application/graphql`, and then you can use a standard graphQL query in the request body.\n\n![[standard graphQL query](https://i.imgur.com/GMP3Eiz.png)](https://i.imgur.com/GMP3Eiz.png)"
+			},
+			"response": [
+				{
+					"id": "38eff0e2-b696-44f9-a3e2-d63cf41150fb",
+					"name": "Successful response",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/graphql",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "query{\n  allFilms\n  {\n   films {\n      id\n      title\n      episodeID\n    }\n  }\n}"
+						},
+						"url": "https://swapi.apis.guru"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Cowboy"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET,PUT,POST,DELETE,OPTIONS"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Content-Type, Authorization, Content-Length, X-Requested-With"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "423"
+						},
+						{
+							"key": "Etag",
+							"value": "W/\"1a7-Q2yB9EcgmVSORKM35UT6aw\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 07 May 2019 00:17:55 GMT"
+						},
+						{
+							"key": "Via",
+							"value": "1.1 vegur"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "{\n    \"data\": {\n        \"allFilms\": {\n            \"films\": [\n                {\n                    \"id\": \"ZmlsbXM6MQ==\",\n                    \"title\": \"A New Hope\",\n                    \"episodeID\": 4\n                },\n                {\n                    \"id\": \"ZmlsbXM6Mg==\",\n                    \"title\": \"The Empire Strikes Back\",\n                    \"episodeID\": 5\n                },\n                {\n                    \"id\": \"ZmlsbXM6Mw==\",\n                    \"title\": \"Return of the Jedi\",\n                    \"episodeID\": 6\n                },\n                {\n                    \"id\": \"ZmlsbXM6NA==\",\n                    \"title\": \"The Phantom Menace\",\n                    \"episodeID\": 1\n                },\n                {\n                    \"id\": \"ZmlsbXM6NQ==\",\n                    \"title\": \"Attack of the Clones\",\n                    \"episodeID\": 2\n                },\n                {\n                    \"id\": \"ZmlsbXM6Ng==\",\n                    \"title\": \"Revenge of the Sith\",\n                    \"episodeID\": 3\n                }\n            ]\n        }\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Import as cURL",
+			"_postman_id": "ac4b479f-ca6c-45dc-8d0c-ce399c50d41a",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{myGitHubAccessToken}}",
+						"description": "[Request your personal access token](https://help.github.com/en/articles/creating-a-personal-access-token-for-the-command-line) here: https://github.com/settings/tokens"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"query\": \"query {repository(owner: \\\"loopDelicious\\\", name: \\\"cat-kube-stateless\\\") {description}}\"}",
+					"options": {}
+				},
+				"url": "https://api.github.com/graphql",
+				"description": "1. **Import a cURL command**: See below for an example cURL request representing a GraphQL query. Copy this request (or another one) to your clipboard. Then, click the **Import** button in the top left of the Postman app. Under the **Paste Raw Text** tab, paste your cURL command and confirm Import. \n```\ncurl -i -H 'Content-Type: application/json' -H \"Authorization: Bearer {{myGithubAccessToken}}\" -X POST -d '{\"query\": \"query {repository(owner: \\\"loopDelicious\\\", name: \\\"cat-kube-stateless\\\") {description}}\"}' https://api.github.com/graphql\n```\n![[Import and paste the cURL as raw text](https://i.imgur.com/7q2O5Rf.png)](https://i.imgur.com/7q2O5Rf.png)\n1. Update the repository owner (`\\\"loopDelicious\\\"`) with your own GitHub username (`\\\"yourName\\\"`) under the **Body** tab. Remember to properly escape the double quotes so it can be interpreted as JSON, and leave your `\\`'s' in place.\n1. Update the repository name (`\\\"cat-kube-stateless\\\"`) with your own GitHub repo (`\\\"yourRepo\\\"`) under the **Body** tab. Again, remember to properly escape the double quotes.\n1. Update `{{myGitHubAccessToken}}` with your own token under the **Headers** tab, or [use an environment](https://learning.getpostman.com/docs/postman/environments_and_globals/manage_environments) to plug in the variable value. You can [request your personal access token](https://help.github.com/en/articles/creating-a-personal-access-token-for-the-command-line) here: https://github.com/settings/tokens"
+			},
+			"response": [
+				{
+					"id": "8c54f72a-5eb3-4625-b243-79adf6986a12",
+					"name": "Successful response",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{myGitHubAccessToken}}",
+								"description": "[Request your personal access token](https://help.github.com/en/articles/creating-a-personal-access-token-for-the-command-line) here: https://github.com/settings/tokens"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"query\": \"query {repository(owner: \\\"loopDelicious\\\", name: \\\"cat-kube-stateless\\\") {description}}\"}"
+						},
+						"url": "https://api.github.com/graphql"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Tue, 07 May 2019 02:28:28 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Server",
+							"value": "GitHub.com"
+						},
+						{
+							"key": "Status",
+							"value": "200 OK"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache"
+						},
+						{
+							"key": "X-OAuth-Scopes",
+							"value": "repo"
+						},
+						{
+							"key": "X-Accepted-OAuth-Scopes",
+							"value": "repo"
+						},
+						{
+							"key": "X-GitHub-Media-Type",
+							"value": "github.v4; format=json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "5000"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "4996"
+						},
+						{
+							"key": "X-RateLimit-Reset",
+							"value": "1557199708"
+						},
+						{
+							"key": "Access-Control-Expose-Headers",
+							"value": "ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval, X-GitHub-Media-Type"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=31536000; includeSubdomains; preload"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "deny"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "origin-when-cross-origin, strict-origin-when-cross-origin"
+						},
+						{
+							"key": "Content-Security-Policy",
+							"value": "default-src 'none'"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "X-GitHub-Request-Id",
+							"value": "E3CC:93AF:C67ADB:F1D0A0:5CD0ED2A"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "{\n    \"data\": {\n        \"repository\": {\n            \"description\": \"🐱 URL shortener using cat verbs, cat adjectives, and cat emojis\"\n        }\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Built-in support for GraphQL",
+			"_postman_id": "610d5cfe-45a1-4f8f-9dfa-4b897513f1c9",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql"
+				},
+				"url": "https://spotify-graphql-server.herokuapp.com/graphql",
+				"description": "> Postman launched built-in support for GraphQL in version 7.2.\n\nIf you're using Postman v7.2 or later, the app supports the following:\n\n* Sending GraphQL queries in request body as POST requests\n* Support for GraphQL variables\n* Creating APIs in Postman with GraphQL schema type\n* Query autocompletion integrated with user-defined GraphQL schemas\n \nThis example is from this step-by-step tutorial about [how to use Postman with the Spotify GraphQL API](https://blog.getpostman.com/2019/06/18/postman-v7-2-supports-graphql/).\n\n![[GraphQL in Postman](https://i.imgur.com/4nKoPU7.png)](https://i.imgur.com/4nKoPU7.png)\n\nTo enable the autocompletion, you will need to add a GraphQL schema under the APIs tab, and then select the schema while typing your query. An example GraphQL schema:\n\n```\ntype Album {\n  name: String\n  id: ID\n  image: String\n  tracks: [Track]\n}\n\ntype Artist {\n  name: String!\n  id: ID\n  image: String\n  albums(limit: Int = 10): [Album]\n}\n\ntype Query {\n  hi(message: String = \"Hi\"): String\n  queryArtists(byName: String = \"Red Hot Chili Peppers\"): [Artist]\n}\n\ntype Track {\n  name: String!\n  artists: [Artist]\n  preview_url: String\n  id: ID\n}\n```"
+			},
+			"response": [
+				{
+					"id": "b778b170-8503-4597-8682-e1b28be5e765",
+					"name": "successful response",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query getByArtist ($name: String!) {\n    queryArtists (byName: $name) {\n        name\n        image\n        albums {\n            name\n        }\n    }\n}",
+								"variables": "{\n    \"name\": \"{{artist}}\"\n}"
+							}
+						},
+						"url": "https://spotify-graphql-server.herokuapp.com/graphql"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Cowboy"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "3453"
+						},
+						{
+							"key": "Etag",
+							"value": "W/\"d7d-Tpc/sCuFhUg6s283JzeQA6Wh6zo\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 18 Jun 2019 21:07:28 GMT"
+						},
+						{
+							"key": "Via",
+							"value": "1.1 vegur"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "{\n    \"data\": {\n        \"queryArtists\": [\n            {\n                \"name\": \"Pink Floyd\",\n                \"image\": \"https://i.scdn.co/image/e69f71e2be4b67b82af90fb8e9d805715e0684fa\",\n                \"albums\": [\n                    {\n                        \"name\": \"The Endless River\"\n                    },\n                    {\n                        \"name\": \"The Endless River\"\n                    },\n                    {\n                        \"name\": \"Pulse\"\n                    },\n                    {\n                        \"name\": \"Pulse (Live)\"\n                    },\n                    {\n                        \"name\": \"The Division Bell (2011 Remastered Version)\"\n                    },\n                    {\n                        \"name\": \"The Division Bell\"\n                    },\n                    {\n                        \"name\": \"Delicate Sound of Thunder (Live)\"\n                    },\n                    {\n                        \"name\": \"Delicate Sound Of Thunder\"\n                    },\n                    {\n                        \"name\": \"A Momentary Lapse of Reason\"\n                    },\n                    {\n                        \"name\": \"A Momentary Lapse of Reason\"\n                    },\n                    {\n                        \"name\": \"A Momentary Lapse Of Reason (2011 Remastered Version)\"\n                    },\n                    {\n                        \"name\": \"The Final Cut (2011 Remastered Version)\"\n                    },\n                    {\n                        \"name\": \"The Final Cut\"\n                    },\n                    {\n                        \"name\": \"The Wall\"\n                    },\n                    {\n                        \"name\": \"The Wall (Remastered)\"\n                    },\n                    {\n                        \"name\": \"Animals\"\n                    },\n                    {\n                        \"name\": \"Animals (2011 Remastered Version)\"\n                    },\n                    {\n                        \"name\": \"Wish You Were Here\"\n                    },\n                    {\n                        \"name\": \"Wish You Were Here [Remastered] (Remastered Version)\"\n                    },\n                    {\n                        \"name\": \"The Dark Side of the Moon\"\n                    }\n                ]\n            },\n            {\n                \"name\": \"Dj Pink Floyd\",\n                \"image\": \"https://i.scdn.co/image/1e6e870d6fa368e77cb23fe628ca8d5d093f2d7c\",\n                \"albums\": [\n                    {\n                        \"name\": \"Go to Sleep\"\n                    }\n                ]\n            },\n            {\n                \"name\": \"Think Pink Floyd\",\n                \"image\": \"https://i.scdn.co/image/15978deb5e42e26bbc81a0464084b9638457cb76\",\n                \"albums\": [\n                    {\n                        \"name\": \"Billy Martin\"\n                    }\n                ]\n            },\n            {\n                \"name\": \"Pink Floyd Redux\",\n                \"image\": \"https://i.scdn.co/image/92911e90e7cfa8c64c2c790b22b75bce1e31508e\",\n                \"albums\": [\n                    {\n                        \"name\": \"A New Music Experience\"\n                    },\n                    {\n                        \"name\": \"Pink Floyd Redux\"\n                    }\n                ]\n            },\n            {\n                \"name\": \"The Australian Pink Floyd Show\",\n                \"image\": \"https://i.scdn.co/image/4080bc55ea9ccc9f4fb101eae4c14351e832c382\",\n                \"albums\": [\n                    {\n                        \"name\": \"Exposed In The Light\"\n                    },\n                    {\n                        \"name\": \"Live at Hammersmith Apollo 2011\"\n                    }\n                ]\n            },\n            {\n                \"name\": \"Celtic Pink Floyd\",\n                \"image\": \"https://i.scdn.co/image/41c1dd9c5d40e9e3d2e2abe90d7c6d751075af3b\",\n                \"albums\": [\n                    {\n                        \"name\": \"In Studio\"\n                    },\n                    {\n                        \"name\": \"Celtic Pink Floyd\"\n                    }\n                ]\n            },\n            {\n                \"name\": \"The Pink Floyd Story\",\n                \"image\": \"https://i.scdn.co/image/2480d7c24b9ad93408a8455b1dc281d3f7239268\",\n                \"albums\": [\n                    {\n                        \"name\": \"The Great Gig In the Sky\"\n                    },\n                    {\n                        \"name\": \"American Horror Story - The Name Game\"\n                    },\n                    {\n                        \"name\": \"American Horror Story - The Name Game\"\n                    },\n                    {\n                        \"name\": \"Travellers - The Complete Fantasy Playlist\"\n                    }\n                ]\n            },\n            {\n                \"name\": \"Floyd Pink\",\n                \"image\": \"https://i.scdn.co/image/5fd98e28dcbbaa97b3cc2ed84683589dddc424b4\",\n                \"albums\": [\n                    {\n                        \"name\": \"Money (Broke Version)\"\n                    },\n                    {\n                        \"name\": \"PUSH EP\"\n                    }\n                ]\n            },\n            {\n                \"name\": \"Pink Floyd Project\",\n                \"image\": \"https://i.scdn.co/image/948813e539c645da4b8b0ef8a7560102a27bfc80\",\n                \"albums\": [\n                    {\n                        \"name\": \"Jelling Musikfestival 2012\"\n                    }\n                ]\n            },\n            {\n                \"name\": \"Hungarian Pink Floyd Show\",\n                \"image\": \"https://i.scdn.co/image/53f81d7757b55320a9b4248cc96ef36d26f8dfe1\",\n                \"albums\": [\n                    {\n                        \"name\": \"On The Turning Away 2012\"\n                    }\n                ]\n            },\n            {\n                \"name\": \"Atom Pink Floyd Tribute\",\n                \"image\": \"https://i.scdn.co/image/6cbd40d400a19ef0d86eec900b4cb78c18ed1354\",\n                \"albums\": [\n                    {\n                        \"name\": \"Tearing Down the Wall: Live 2015\"\n                    },\n                    {\n                        \"name\": \"Studio Sessions - Wish You Were Here\"\n                    }\n                ]\n            },\n            {\n                \"name\": \"Pink Floyd Tribute Band\",\n                \"image\": \"\",\n                \"albums\": [\n                    {\n                        \"name\": \"World's Greatest Rock Anthems - The Only Rock Tributes Album You'll Ever Need! (Deluxe Version)\"\n                    },\n                    {\n                        \"name\": \"World's Greatest Rock Anthems - The only Rock Tributes album you'll ever need!\"\n                    }\n                ]\n            },\n            {\n                \"name\": \"Made famous by Pink Floyd\",\n                \"image\": \"\",\n                \"albums\": [\n                    {\n                        \"name\": \"Lesbian Music\"\n                    }\n                ]\n            },\n            {\n                \"name\": \"The Machine Perform Pink Floyd\",\n                \"image\": \"https://i.scdn.co/image/52a23a39ff1313c05a54a624734d90cc3057d34c\",\n                \"albums\": [\n                    {\n                        \"name\": \"Two Nights At The Keswick, Volume 2\"\n                    },\n                    {\n                        \"name\": \"The Machine Unplugged\"\n                    },\n                    {\n                        \"name\": \"Two Nights at the Keswick, Volume 1\"\n                    }\n                ]\n            },\n            {\n                \"name\": \"THE ILLUSION A SOUND LIKE PINK FLOYD\",\n                \"image\": \"https://i.scdn.co/image/b83e98cbf88f9807fbe31c7cff33b959ba12cd67\",\n                \"albums\": [\n                    {\n                        \"name\": \"Project One\"\n                    },\n                    {\n                        \"name\": \"Leaving the Earth\"\n                    }\n                ]\n            }\n        ]\n    }\n}"
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "e200b67a-6080-47ff-84f3-a3458f0e2422",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "0d64570b-1dc3-4d5e-8c0c-fd33df700ec4",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
