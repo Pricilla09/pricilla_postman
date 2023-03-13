@@ -352,6 +352,10 @@
 									"\r",
 									"pm.test(\"Body contains the string Cat\", function () {\r",
 									"    pm.expect(pm.response.text()).to.include(\"cat\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
 									"});"
 								],
 								"type": "text/javascript"
@@ -368,7 +372,7 @@
 							}
 						}
 					],
-					"_postman_id": "c0dfeafa-7eb4-409e-a2d9-26bafe50fb7c",
+					"id": "c0dfeafa-7eb4-409e-a2d9-26bafe50fb7c",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -457,7 +461,7 @@
 							}
 						}
 					],
-					"_postman_id": "5fccfbd6-e57b-4814-a808-cb3522751a9c",
+					"id": "5fccfbd6-e57b-4814-a808-cb3522751a9c",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -470,7 +474,7 @@
 					"response": []
 				}
 			],
-			"_postman_id": "b713e709-362c-4861-b2e6-b42526916832",
+			"id": "b713e709-362c-4861-b2e6-b42526916832",
 			"description": "These are public API endpoints for animals.\n\n![test](https://upload.wikimedia.org/wikipedia/commons/5/56/Tiger.50.jpg)",
 			"event": [
 				{
@@ -544,7 +548,7 @@
 							}
 						}
 					],
-					"_postman_id": "57249b52-6319-43d0-a7ee-1e8c9270058d",
+					"id": "57249b52-6319-43d0-a7ee-1e8c9270058d",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -738,7 +742,7 @@
 							}
 						}
 					],
-					"_postman_id": "81c0ce5c-083b-42b9-84fc-2b9c23af19ab",
+					"id": "81c0ce5c-083b-42b9-84fc-2b9c23af19ab",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -777,7 +781,7 @@
 					"response": []
 				}
 			],
-			"_postman_id": "4e1bbe39-a07a-4674-99dc-1fd78f25836f",
+			"id": "4e1bbe39-a07a-4674-99dc-1fd78f25836f",
 			"description": "These are public API endpoints for cars.\n\n![cars](https://upload.wikimedia.org/wikipedia/commons/9/9f/D%C3%BClmen%2C_Wiesmann_Sports_Cars%2C_Wiesmann_GT_MF5_--_2018_--_9524.jpg)",
 			"event": [
 				{
@@ -854,7 +858,7 @@
 							}
 						}
 					],
-					"_postman_id": "831e789e-e0cd-47b7-8ef4-d4672773d22a",
+					"id": "831e789e-e0cd-47b7-8ef4-d4672773d22a",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -895,7 +899,7 @@
 					"response": []
 				}
 			],
-			"_postman_id": "da263d49-e11b-4cac-9090-8eff3428908f",
+			"id": "da263d49-e11b-4cac-9090-8eff3428908f",
 			"description": "These are public API endpoints for earthquakes.\n\n![earthquake](https://upload.wikimedia.org/wikipedia/commons/0/0d/Post-and-Grant-Avenue-Look.jpg)",
 			"event": [
 				{
@@ -925,7 +929,7 @@
 			"item": [
 				{
 					"name": "Sunrise and Sunset",
-					"_postman_id": "e17a81ae-f6d9-4f7c-9387-67406d840da1",
+					"id": "e17a81ae-f6d9-4f7c-9387-67406d840da1",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -959,7 +963,7 @@
 					"response": []
 				}
 			],
-			"_postman_id": "ba550f5f-140e-482c-908c-f8b9ee3d1825",
+			"id": "ba550f5f-140e-482c-908c-f8b9ee3d1825",
 			"description": "These are public API endpoints for sun.\n\n![sun](https://upload.wikimedia.org/wikipedia/commons/e/e3/Magnificent_CME_Erupts_on_the_Sun_-_August_31.jpg)",
 			"event": [
 				{
@@ -1027,7 +1031,7 @@
 									}
 								}
 							],
-							"_postman_id": "569257b5-ecdf-4d20-9b03-52803773278e",
+							"id": "569257b5-ecdf-4d20-9b03-52803773278e",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -1042,10 +1046,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"INPUT\": \"{{randomText}}\"\n}",
-									"options": {
-										"raw": {}
-									}
+									"raw": "{\n  \"INPUT\": \"{{randomText}}\"\n}"
 								},
 								"url": "HTTP://API.SHOUTCLOUD.IO/V1/SHOUT",
 								"description": "Capitalizes every letter for input set using body."
@@ -1053,11 +1054,10 @@
 							"response": []
 						}
 					],
-					"_postman_id": "00e37c0e-d86a-4797-93f8-79c4eb703bb4",
-					"_postman_isSubFolder": true
+					"id": "00e37c0e-d86a-4797-93f8-79c4eb703bb4"
 				}
 			],
-			"_postman_id": "dc5dd8e4-6ac3-42ca-8587-c6a9338412a1",
+			"id": "dc5dd8e4-6ac3-42ca-8587-c6a9338412a1",
 			"description": "These are public API endpoints for text.\n\n![text](https://upload.wikimedia.org/wikipedia/commons/1/18/Ornamental_Alphabet_-_16th_Century.svg)",
 			"event": [
 				{
@@ -1087,7 +1087,7 @@
 			"item": [
 				{
 					"name": "Bored",
-					"_postman_id": "02810213-4444-4898-a48d-80345390833c",
+					"id": "02810213-4444-4898-a48d-80345390833c",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -1100,7 +1100,7 @@
 					"response": []
 				}
 			],
-			"_postman_id": "fb797e1a-eaed-4618-a4fa-ba1448f98f5a"
+			"id": "fb797e1a-eaed-4618-a4fa-ba1448f98f5a"
 		},
 		{
 			"name": "Cryto Currency",
@@ -1119,7 +1119,7 @@
 							}
 						}
 					],
-					"_postman_id": "bd9c1d3e-a9b4-4908-a0e6-b7182d62f3c5",
+					"id": "bd9c1d3e-a9b4-4908-a0e6-b7182d62f3c5",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -1131,7 +1131,7 @@
 					"response": []
 				}
 			],
-			"_postman_id": "9f26b38f-63af-4d13-9628-fd46ff9587ee"
+			"id": "9f26b38f-63af-4d13-9628-fd46ff9587ee"
 		},
 		{
 			"name": "Random",
@@ -1419,7 +1419,7 @@
 							}
 						}
 					],
-					"_postman_id": "84ac5fc2-786a-4a63-8f1e-95bf08705350",
+					"id": "84ac5fc2-786a-4a63-8f1e-95bf08705350",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -1431,18 +1431,17 @@
 					"response": []
 				}
 			],
-			"_postman_id": "42062e41-4723-4761-bd8b-4aee06cd658d"
+			"id": "42062e41-4723-4761-bd8b-4aee06cd658d"
 		},
 		{
 			"name": "New Request",
-			"_postman_id": "b2930315-c882-4273-9470-21ad3fa03a53",
+			"id": "b2930315-c882-4273-9470-21ad3fa03a53",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
 			"request": {
 				"method": "GET",
-				"header": [],
-				"url": null
+				"header": []
 			},
 			"response": []
 		}
