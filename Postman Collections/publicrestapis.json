@@ -1,0 +1,1483 @@
+{
+	"info": {
+		"_postman_id": "32f79780-22f6-4128-9632-24cda1304a97",
+		"name": "Public REST APIs",
+		"description": "This is a collection of different REST APIs that are completely public and do not require any authentication, making it easier for consumers to play with and understand what APIs are all about by seeing the many different ways in which APIs can be used.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Animals",
+			"item": [
+				{
+					"name": "Cat Facts",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "6c454f8d-7d61-408f-9bd5-1df236baef05",
+								"exec": [
+									"//validate the schema\r",
+									"const schema = {\r",
+									"  \"type\": \"array\",\r",
+									"  \"items\": [\r",
+									"    {\r",
+									"      \"type\": \"object\",\r",
+									"      \"properties\": {\r",
+									"        \"status\": {\r",
+									"          \"type\": \"object\",\r",
+									"          \"properties\": {\r",
+									"            \"verified\": {\r",
+									"              \"type\": \"boolean\"\r",
+									"            },\r",
+									"            \"sentCount\": {\r",
+									"              \"type\": \"integer\"\r",
+									"            },\r",
+									"            \"feedback\": {\r",
+									"              \"type\": \"string\"\r",
+									"            }\r",
+									"          },\r",
+									"          \"required\": [\r",
+									"            \"verified\",\r",
+									"            \"sentCount\",\r",
+									"            \"feedback\"\r",
+									"          ]\r",
+									"        },\r",
+									"        \"type\": {\r",
+									"          \"type\": \"string\"\r",
+									"        },\r",
+									"        \"deleted\": {\r",
+									"          \"type\": \"boolean\"\r",
+									"        },\r",
+									"        \"_id\": {\r",
+									"          \"type\": \"string\"\r",
+									"        },\r",
+									"        \"user\": {\r",
+									"          \"type\": \"string\"\r",
+									"        },\r",
+									"        \"text\": {\r",
+									"          \"type\": \"string\"\r",
+									"        },\r",
+									"        \"__v\": {\r",
+									"          \"type\": \"integer\"\r",
+									"        },\r",
+									"        \"source\": {\r",
+									"          \"type\": \"string\"\r",
+									"        },\r",
+									"        \"updatedAt\": {\r",
+									"          \"type\": \"string\"\r",
+									"        },\r",
+									"        \"createdAt\": {\r",
+									"          \"type\": \"string\"\r",
+									"        },\r",
+									"        \"used\": {\r",
+									"          \"type\": \"boolean\"\r",
+									"        }\r",
+									"      },\r",
+									"      \"required\": [\r",
+									"        \"status\",\r",
+									"        \"type\",\r",
+									"        \"deleted\",\r",
+									"        \"_id\",\r",
+									"        \"user\",\r",
+									"        \"text\",\r",
+									"        \"__v\",\r",
+									"        \"source\",\r",
+									"        \"updatedAt\",\r",
+									"        \"createdAt\",\r",
+									"        \"used\"\r",
+									"      ]\r",
+									"    },\r",
+									"    {\r",
+									"      \"type\": \"object\",\r",
+									"      \"properties\": {\r",
+									"        \"status\": {\r",
+									"          \"type\": \"object\",\r",
+									"          \"properties\": {\r",
+									"            \"verified\": {\r",
+									"              \"type\": \"boolean\"\r",
+									"            },\r",
+									"            \"sentCount\": {\r",
+									"              \"type\": \"integer\"\r",
+									"            }\r",
+									"          },\r",
+									"          \"required\": [\r",
+									"            \"verified\",\r",
+									"            \"sentCount\"\r",
+									"          ]\r",
+									"        },\r",
+									"        \"type\": {\r",
+									"          \"type\": \"string\"\r",
+									"        },\r",
+									"        \"deleted\": {\r",
+									"          \"type\": \"boolean\"\r",
+									"        },\r",
+									"        \"_id\": {\r",
+									"          \"type\": \"string\"\r",
+									"        },\r",
+									"        \"user\": {\r",
+									"          \"type\": \"string\"\r",
+									"        },\r",
+									"        \"text\": {\r",
+									"          \"type\": \"string\"\r",
+									"        },\r",
+									"        \"__v\": {\r",
+									"          \"type\": \"integer\"\r",
+									"        },\r",
+									"        \"source\": {\r",
+									"          \"type\": \"string\"\r",
+									"        },\r",
+									"        \"updatedAt\": {\r",
+									"          \"type\": \"string\"\r",
+									"        },\r",
+									"        \"createdAt\": {\r",
+									"          \"type\": \"string\"\r",
+									"        },\r",
+									"        \"used\": {\r",
+									"          \"type\": \"boolean\"\r",
+									"        }\r",
+									"      },\r",
+									"      \"required\": [\r",
+									"        \"status\",\r",
+									"        \"type\",\r",
+									"        \"deleted\",\r",
+									"        \"_id\",\r",
+									"        \"user\",\r",
+									"        \"text\",\r",
+									"        \"__v\",\r",
+									"        \"source\",\r",
+									"        \"updatedAt\",\r",
+									"        \"createdAt\",\r",
+									"        \"used\"\r",
+									"      ]\r",
+									"    },\r",
+									"    {\r",
+									"      \"type\": \"object\",\r",
+									"      \"properties\": {\r",
+									"        \"status\": {\r",
+									"          \"type\": \"object\",\r",
+									"          \"properties\": {\r",
+									"            \"verified\": {\r",
+									"              \"type\": \"boolean\"\r",
+									"            },\r",
+									"            \"sentCount\": {\r",
+									"              \"type\": \"integer\"\r",
+									"            }\r",
+									"          },\r",
+									"          \"required\": [\r",
+									"            \"verified\",\r",
+									"            \"sentCount\"\r",
+									"          ]\r",
+									"        },\r",
+									"        \"type\": {\r",
+									"          \"type\": \"string\"\r",
+									"        },\r",
+									"        \"deleted\": {\r",
+									"          \"type\": \"boolean\"\r",
+									"        },\r",
+									"        \"_id\": {\r",
+									"          \"type\": \"string\"\r",
+									"        },\r",
+									"        \"user\": {\r",
+									"          \"type\": \"string\"\r",
+									"        },\r",
+									"        \"text\": {\r",
+									"          \"type\": \"string\"\r",
+									"        },\r",
+									"        \"__v\": {\r",
+									"          \"type\": \"integer\"\r",
+									"        },\r",
+									"        \"source\": {\r",
+									"          \"type\": \"string\"\r",
+									"        },\r",
+									"        \"updatedAt\": {\r",
+									"          \"type\": \"string\"\r",
+									"        },\r",
+									"        \"createdAt\": {\r",
+									"          \"type\": \"string\"\r",
+									"        },\r",
+									"        \"used\": {\r",
+									"          \"type\": \"boolean\"\r",
+									"        }\r",
+									"      },\r",
+									"      \"required\": [\r",
+									"        \"status\",\r",
+									"        \"type\",\r",
+									"        \"deleted\",\r",
+									"        \"_id\",\r",
+									"        \"user\",\r",
+									"        \"text\",\r",
+									"        \"__v\",\r",
+									"        \"source\",\r",
+									"        \"updatedAt\",\r",
+									"        \"createdAt\",\r",
+									"        \"used\"\r",
+									"      ]\r",
+									"    },\r",
+									"    {\r",
+									"      \"type\": \"object\",\r",
+									"      \"properties\": {\r",
+									"        \"status\": {\r",
+									"          \"type\": \"object\",\r",
+									"          \"properties\": {\r",
+									"            \"verified\": {\r",
+									"              \"type\": \"boolean\"\r",
+									"            },\r",
+									"            \"sentCount\": {\r",
+									"              \"type\": \"integer\"\r",
+									"            }\r",
+									"          },\r",
+									"          \"required\": [\r",
+									"            \"verified\",\r",
+									"            \"sentCount\"\r",
+									"          ]\r",
+									"        },\r",
+									"        \"type\": {\r",
+									"          \"type\": \"string\"\r",
+									"        },\r",
+									"        \"deleted\": {\r",
+									"          \"type\": \"boolean\"\r",
+									"        },\r",
+									"        \"_id\": {\r",
+									"          \"type\": \"string\"\r",
+									"        },\r",
+									"        \"user\": {\r",
+									"          \"type\": \"string\"\r",
+									"        },\r",
+									"        \"text\": {\r",
+									"          \"type\": \"string\"\r",
+									"        },\r",
+									"        \"__v\": {\r",
+									"          \"type\": \"integer\"\r",
+									"        },\r",
+									"        \"source\": {\r",
+									"          \"type\": \"string\"\r",
+									"        },\r",
+									"        \"updatedAt\": {\r",
+									"          \"type\": \"string\"\r",
+									"        },\r",
+									"        \"createdAt\": {\r",
+									"          \"type\": \"string\"\r",
+									"        },\r",
+									"        \"used\": {\r",
+									"          \"type\": \"boolean\"\r",
+									"        }\r",
+									"      },\r",
+									"      \"required\": [\r",
+									"        \"status\",\r",
+									"        \"type\",\r",
+									"        \"deleted\",\r",
+									"        \"_id\",\r",
+									"        \"user\",\r",
+									"        \"text\",\r",
+									"        \"__v\",\r",
+									"        \"source\",\r",
+									"        \"updatedAt\",\r",
+									"        \"createdAt\",\r",
+									"        \"used\"\r",
+									"      ]\r",
+									"    },\r",
+									"    {\r",
+									"      \"type\": \"object\",\r",
+									"      \"properties\": {\r",
+									"        \"status\": {\r",
+									"          \"type\": \"object\",\r",
+									"          \"properties\": {\r",
+									"            \"verified\": {\r",
+									"              \"type\": \"boolean\"\r",
+									"            },\r",
+									"            \"sentCount\": {\r",
+									"              \"type\": \"integer\"\r",
+									"            }\r",
+									"          },\r",
+									"          \"required\": [\r",
+									"            \"verified\",\r",
+									"            \"sentCount\"\r",
+									"          ]\r",
+									"        },\r",
+									"        \"type\": {\r",
+									"          \"type\": \"string\"\r",
+									"        },\r",
+									"        \"deleted\": {\r",
+									"          \"type\": \"boolean\"\r",
+									"        },\r",
+									"        \"_id\": {\r",
+									"          \"type\": \"string\"\r",
+									"        },\r",
+									"        \"user\": {\r",
+									"          \"type\": \"string\"\r",
+									"        },\r",
+									"        \"text\": {\r",
+									"          \"type\": \"string\"\r",
+									"        },\r",
+									"        \"__v\": {\r",
+									"          \"type\": \"integer\"\r",
+									"        },\r",
+									"        \"source\": {\r",
+									"          \"type\": \"string\"\r",
+									"        },\r",
+									"        \"updatedAt\": {\r",
+									"          \"type\": \"string\"\r",
+									"        },\r",
+									"        \"createdAt\": {\r",
+									"          \"type\": \"string\"\r",
+									"        },\r",
+									"        \"used\": {\r",
+									"          \"type\": \"boolean\"\r",
+									"        }\r",
+									"      },\r",
+									"      \"required\": [\r",
+									"        \"status\",\r",
+									"        \"type\",\r",
+									"        \"deleted\",\r",
+									"        \"_id\",\r",
+									"        \"user\",\r",
+									"        \"text\",\r",
+									"        \"__v\",\r",
+									"        \"source\",\r",
+									"        \"updatedAt\",\r",
+									"        \"createdAt\",\r",
+									"        \"used\"\r",
+									"      ]\r",
+									"    }\r",
+									"  ]\r",
+									"};\r",
+									"\r",
+									"var resp = pm.response.json();\r",
+									"\r",
+									"pm.test('Schema is valid', function () {\r",
+									"   pm.response.to.have.jsonSchema(schema);\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"Body contains the string Cat\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"cat\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "3446c9c3-9b40-4b37-9192-b4c12e7d9b2d",
+								"exec": [
+									"pm.environment.set(\"generatedCategory\", pm.variables.replaceIn('{{$randomWord}} {{$randomWord}}'));"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"_postman_id": "c0dfeafa-7eb4-409e-a2d9-26bafe50fb7c",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": "https://cat-fact.herokuapp.com/facts/",
+						"description": "Facts about cats!!\n\n![cats](https://upload.wikimedia.org/wikipedia/commons/3/32/Tired_20-year-old_cat.jpg)\n\nURL - https://alexwohlbruck.github.io/cat-facts/"
+					},
+					"response": [
+						{
+							"id": "8ed9a473-411c-44d8-a1e6-54ce5a9e04e7",
+							"name": "Cat Facts",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": "https://cat-fact.herokuapp.com/facts/"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "Cowboy"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1675"
+								},
+								{
+									"key": "Etag",
+									"value": "W/\"68b-25VLvc9X+ykqz7RP7OPGT3PIXAw\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 10 Mar 2023 04:42:07 GMT"
+								},
+								{
+									"key": "Via",
+									"value": "1.1 vegur"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "[\n    {\n        \"status\": {\n            \"verified\": true,\n            \"feedback\": \"\",\n            \"sentCount\": 1\n        },\n        \"_id\": \"5887e1d85c873e0011036889\",\n        \"user\": \"5a9ac18c7478810ea6c06381\",\n        \"text\": \"Cats make about 100 different sounds. Dogs make only about 10.\",\n        \"__v\": 0,\n        \"source\": \"user\",\n        \"updatedAt\": \"2020-09-03T16:39:39.578Z\",\n        \"type\": \"cat\",\n        \"createdAt\": \"2018-01-15T21:20:00.003Z\",\n        \"deleted\": false,\n        \"used\": true\n    },\n    {\n        \"status\": {\n            \"verified\": true,\n            \"sentCount\": 1\n        },\n        \"_id\": \"588e746706ac2b00110e59ff\",\n        \"user\": \"588e6e8806ac2b00110e59c3\",\n        \"text\": \"Domestic cats spend about 70 percent of the day sleeping and 15 percent of the day grooming.\",\n        \"__v\": 0,\n        \"source\": \"user\",\n        \"updatedAt\": \"2020-08-26T20:20:02.359Z\",\n        \"type\": \"cat\",\n        \"createdAt\": \"2018-01-14T21:20:02.750Z\",\n        \"deleted\": false,\n        \"used\": true\n    },\n    {\n        \"status\": {\n            \"verified\": true,\n            \"sentCount\": 1\n        },\n        \"_id\": \"58923f2fc3878c0011784c79\",\n        \"user\": \"5887e9f65c873e001103688d\",\n        \"text\": \"I don't know anything about cats.\",\n        \"__v\": 0,\n        \"source\": \"user\",\n        \"updatedAt\": \"2020-08-23T20:20:01.611Z\",\n        \"type\": \"cat\",\n        \"createdAt\": \"2018-02-25T21:20:03.060Z\",\n        \"deleted\": false,\n        \"used\": false\n    },\n    {\n        \"status\": {\n            \"verified\": true,\n            \"sentCount\": 1\n        },\n        \"_id\": \"5894af975cdc7400113ef7f9\",\n        \"user\": \"5a9ac18c7478810ea6c06381\",\n        \"text\": \"The technical term for a cat’s hairball is a bezoar.\",\n        \"__v\": 0,\n        \"source\": \"user\",\n        \"updatedAt\": \"2020-11-25T21:20:03.895Z\",\n        \"type\": \"cat\",\n        \"createdAt\": \"2018-02-27T21:20:02.854Z\",\n        \"deleted\": false,\n        \"used\": true\n    },\n    {\n        \"status\": {\n            \"verified\": true,\n            \"sentCount\": 1\n        },\n        \"_id\": \"58e007cc0aac31001185ecf5\",\n        \"user\": \"58e007480aac31001185ecef\",\n        \"text\": \"Cats are the most popular pet in the United States: There are 88 million pet cats and 74 million dogs.\",\n        \"__v\": 0,\n        \"source\": \"user\",\n        \"updatedAt\": \"2020-08-23T20:20:01.611Z\",\n        \"type\": \"cat\",\n        \"createdAt\": \"2018-03-01T21:20:02.713Z\",\n        \"deleted\": false,\n        \"used\": false\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Dog Breeds",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "6fd2efaf-1ad5-4d6c-9f9f-a5902335e257",
+								"exec": [
+									"//parsing the response body and assinging it to a variable. And again creating a new variable to assign the subset of the response with all the dog names\r",
+									"\r",
+									"var resp = pm.response.json();\r",
+									"var names = resp.message;\r",
+									"console.log(names);\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"_postman_id": "5fccfbd6-e57b-4814-a808-cb3522751a9c",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "https://dog.ceo/api/breeds/list/all",
+						"description": "List all dog breeds.\n\n![dogs](https://upload.wikimedia.org/wikipedia/commons/1/10/Pug_from_1915.JPG)\n\nURL - https://dog.ceo/dog-api/documentation/"
+					},
+					"response": []
+				}
+			],
+			"_postman_id": "b713e709-362c-4861-b2e6-b42526916832",
+			"description": "These are public API endpoints for animals.\n\n![test](https://upload.wikimedia.org/wikipedia/commons/5/56/Tiger.50.jpg)",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "5c0eb2fc-86d7-4e9c-b024-e21ad65e0734",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "e2db812b-19cc-44f1-836d-19bd363bffd6",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Cars",
+			"item": [
+				{
+					"name": "Makes of Cars",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "442d9bd7-359a-4d02-8253-bad6f1080802",
+								"exec": [
+									"var resp = pm.response.json();\r",
+									"console.log(resp);\r",
+									"cars = []; //initialzing the array\r",
+									"pm.environment.set(\"cars\", cars);\r",
+									"\r",
+									"for (var i=0; i<resp.Results.length; i++)\r",
+									"{\r",
+									"    \r",
+									"    cars.push(`${resp.Results[i].Make_Name}`); //push method will add the individual Make_ID's to the end of the array\r",
+									"   }\r",
+									"  \r",
+									"pm.environment.set(\"RandCarName\", cars[Math.floor(Math.random() * cars.length)]);\r",
+									"\r",
+									"pm.test(\"Some records are returned in the response\", function () {\r",
+									"    pm.expect(resp.count)!=0;\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Keys Prop\", function () {\r",
+									"    pm.expect(jsonData.json()).has.property(\"Results\");\r",
+									"});\r",
+									"\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "859391d9-ac85-48a6-9c37-0838f361ea81",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"_postman_id": "57249b52-6319-43d0-a7ee-1e8c9270058d",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://vpic.nhtsa.dot.gov/api/vehicles/getallmakes?format=json",
+							"protocol": "https",
+							"host": [
+								"vpic",
+								"nhtsa",
+								"dot",
+								"gov"
+							],
+							"path": [
+								"api",
+								"vehicles",
+								"getallmakes"
+							],
+							"query": [
+								{
+									"key": "format",
+									"value": "json"
+								},
+								{
+									"key": "format",
+									"value": "xml",
+									"disabled": true
+								},
+								{
+									"key": "format",
+									"value": "text",
+									"disabled": true
+								}
+							]
+						},
+						"description": "Returns a list of makes of cars.\n\nWebsite - https://vpic.nhtsa.dot.gov/api/"
+					},
+					"response": []
+				},
+				{
+					"name": "Car Manufacturers",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "e053aaf1-c30d-4503-b2e3-b00ca5190532",
+								"exec": [
+									"   var resp = pm.response.json();\r",
+									"   var names = pm.response.json().Results;\r",
+									"   var count = pm.response.json().Count;\r",
+									"\r",
+									"\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Status code is OK\", function () {\r",
+									"    pm.response.to.have.status('OK');\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response time is less than 3000ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(3000);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response time validation\", function () {\r",
+									"     pm.expect(pm.response.responseTime).to.be.below(3000);\r",
+									"     pm.expect(pm.response.responseTime).to.be.above(2000);\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"Successful POST request\", function () {\r",
+									"     pm.expect(pm.response.code).to.be.oneOf([200,201,202]);\r",
+									"});\r",
+									"\r",
+									"\r",
+									"\r",
+									"pm.test(\"Result is an Array\", function () {\r",
+									"pm.expect(names).to.be.an('array');\r",
+									"})\r",
+									"\r",
+									"//validating the response message returned\r",
+									"pm.test(\"Response returned successfully\", function () {\r",
+									"     pm.expect(resp.Message).to.eql(\"Response returned successfully\");\r",
+									"});\r",
+									"\r",
+									"\r",
+									"//to check the count is not null\r",
+									"pm.test(\"Count is not NULL\", function () {\r",
+									"     pm.expect(resp.Count).to.not.be.null;\r",
+									"});\r",
+									"\r",
+									"\r",
+									"//count is a string\r",
+									"pm.test(\"Count is a string\", function () {\r",
+									"     pm.expect(resp.Count).to.be.a('number');\r",
+									"});\r",
+									"\r",
+									"//Result exists\r",
+									"pm.test(\"Result exists\", function () {\r",
+									"     pm.expect(resp.Results).to.exist;\r",
+									"});\r",
+									"\r",
+									"//search criteria is NULL\r",
+									"pm.test(\"Search criteria is NULL\", function () {\r",
+									"     pm.expect(resp.SearchCriteria).to.be.null;\r",
+									"});\r",
+									"\r",
+									"\r",
+									"//filter a subset of data\r",
+									"const astonmartin = names.filter((names) => names.Mfr_CommonName === 'Aston Martin')[0];\r",
+									"console.log(astonmartin);\r",
+									"\r",
+									"\r",
+									"//checking the keys of the subset stored in a variable above\r",
+									"pm.test(\"Matching the subset of data\", function () {\r",
+									"     pm.expect(astonmartin).to.have.all.keys('Country','Mfr_CommonName','Mfr_ID','Mfr_Name','VehicleTypes');\r",
+									"});\r",
+									"\r",
+									"\r",
+									"//checking if the expected key is not present\r",
+									"pm.test(\"Country1 key is not present\", function () {\r",
+									"     pm.expect(astonmartin).to.not.have.property('Country1');\r",
+									"});\r",
+									"\r",
+									"\r",
+									"//to check nested properties\r",
+									"pm.test(\"Nested subset\", function () {\r",
+									"     pm.expect(astonmartin).to.have.nested.property('VehicleTypes[0]');\r",
+									"});\r",
+									"\r",
+									"\r",
+									"//to check the length\r",
+									"pm.test(\"count vs length\", function () {\r",
+									"     pm.expect(names).to.have.length(count);\r",
+									"});\r",
+									"\r",
+									"\r",
+									"//to check the count is less than 100\r",
+									"pm.test(\"count vs length\", function () {\r",
+									"     pm.expect(count).to.be.below(100)\r",
+									"});\r",
+									"\r",
+									"\r",
+									"//to check the count is a positive integer\r",
+									"pm.test(\"Count is in the expected range\", function () {\r",
+									"     pm.expect(count).to.be.within(0, 100)\r",
+									"});\r",
+									"\r",
+									"\r",
+									"//to check the count is greater than 90\r",
+									"pm.test(\"Count is greater than 90\", function () {\r",
+									"     pm.expect(count).to.be.above(90)\r",
+									"});\r",
+									"\r",
+									"//to check the count is smaller than 100\r",
+									"pm.test(\"Count is smaller than 100\", function () {\r",
+									"     pm.expect(count).to.be.below(100)\r",
+									"});\r",
+									"\r",
+									"//using forEach\r",
+									"_.forEach(resp.Results, function(result) {\r",
+									"  pm.test('Result has expected properties', function(){\r",
+									"    pm.expect(result).to.have.property('Country');\r",
+									"    pm.expect(result).to.have.property('Mfr_CommonName');\r",
+									"    pm.expect(result).to.have.property('Mfr_ID');\r",
+									"    pm.expect(result).to.have.property('Mfr_Name');\r",
+									"    pm.expect(result).to.have.property('VehicleTypes');\r",
+									"  });\r",
+									"});\r",
+									"\r",
+									"//iterating the data via traditional for loop\r",
+									"for (var i=0; i<resp.Results.length; i++)\r",
+									"{\r",
+									"    //check the tags name are present\r",
+									"pm.test(\"Keys available for \" + resp.Results[i].Mfr_Name, function () {\r",
+									"     pm.expect(resp.Results[i]).to.have.all.keys('Country','Mfr_CommonName','Mfr_ID','Mfr_Name','VehicleTypes')\r",
+									"});\r",
+									"      }\r",
+									"\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"_postman_id": "81c0ce5c-083b-42b9-84fc-2b9c23af19ab",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://vpic.nhtsa.dot.gov/api/vehicles/getallmanufacturers?format=json",
+							"protocol": "https",
+							"host": [
+								"vpic",
+								"nhtsa",
+								"dot",
+								"gov"
+							],
+							"path": [
+								"api",
+								"vehicles",
+								"getallmanufacturers"
+							],
+							"query": [
+								{
+									"key": "format",
+									"value": "json"
+								},
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"description": "Returns a list of car manufacturers.\n\nWebsite - https://vpic.nhtsa.dot.gov/api/"
+					},
+					"response": []
+				}
+			],
+			"_postman_id": "4e1bbe39-a07a-4674-99dc-1fd78f25836f",
+			"description": "These are public API endpoints for cars.\n\n![cars](https://upload.wikimedia.org/wikipedia/commons/9/9f/D%C3%BClmen%2C_Wiesmann_Sports_Cars%2C_Wiesmann_GT_MF5_--_2018_--_9524.jpg)",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "ddd87db7-61dd-44d2-ad01-a31caf938b3c",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "ee36875a-8649-4fed-a261-6d80089c7cb9",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Earthquakes",
+			"item": [
+				{
+					"name": "Earthquakes",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "8b71cec1-a4e6-4c8d-9925-ae8594e60739",
+								"exec": [
+									"const moment = require('moment');\r",
+									"\r",
+									"//to set the past date as the start date you can use the below snippet. this will create a variable with a value which is five days back\r",
+									"\r",
+									"var fiveDaysBack = moment().subtract(5, 'days');\r",
+									"//console.log(fiveDaysBack);\r",
+									"pm.globals.set(\"fiveDaysBack\", fiveDaysBack.format('YYYY-MM-DD'));\r",
+									"\r",
+									"//always to get the endtime param as current date, we can use the below snippet\r",
+									"\r",
+									"pm.globals.set(\"timestamp\", moment().format(\"MM/DD/YYYY hh:mm:ss\"));\r",
+									"pm.globals.set(\"today\", moment().format(\"YYYY-MM-DD\"));\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "891b4273-5483-4128-8adf-a53f463c35aa",
+								"exec": [
+									"var resp = pm.response.json();\r",
+									"\r",
+									"pm.test(\"Title value check\", function () {\r",
+									"        pm.expect(resp.metadata.title).to.eql('USGS Earthquakes');\r",
+									"});\r",
+									"\r",
+									"//to check the URL value is generated based on the input dates\r",
+									"pm.test(\"URL value check\", function () {\r",
+									"    pm.expect(resp.metadata.url).to.eql('https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime=' + pm.globals.get(\"fiveDaysBack\") + '&endtime=' + pm.globals.get(\"today\"));\r",
+									"    ;\r",
+									"});\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"_postman_id": "831e789e-e0cd-47b7-8ef4-d4672773d22a",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime={{fiveDaysBack}}&endtime={{today}}",
+							"protocol": "https",
+							"host": [
+								"earthquake",
+								"usgs",
+								"gov"
+							],
+							"path": [
+								"fdsnws",
+								"event",
+								"1",
+								"query"
+							],
+							"query": [
+								{
+									"key": "format",
+									"value": "geojson"
+								},
+								{
+									"key": "starttime",
+									"value": "{{fiveDaysBack}}"
+								},
+								{
+									"key": "endtime",
+									"value": "{{today}}"
+								}
+							]
+						},
+						"description": "Returns a list of eqrthquakes for a time period."
+					},
+					"response": []
+				}
+			],
+			"_postman_id": "da263d49-e11b-4cac-9090-8eff3428908f",
+			"description": "These are public API endpoints for earthquakes.\n\n![earthquake](https://upload.wikimedia.org/wikipedia/commons/0/0d/Post-and-Grant-Avenue-Look.jpg)",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "2ed6f2f1-0ad3-4215-893a-35a072a336ad",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "75e64f4e-1d69-4368-afb7-1199f15b24e7",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Sun",
+			"item": [
+				{
+					"name": "Sunrise and Sunset",
+					"_postman_id": "e17a81ae-f6d9-4f7c-9387-67406d840da1",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.sunrise-sunset.org/json?lat={{$randomLatitude}}&lng={{$randomLongitude}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"sunrise-sunset",
+								"org"
+							],
+							"path": [
+								"json"
+							],
+							"query": [
+								{
+									"key": "lat",
+									"value": "{{$randomLatitude}}"
+								},
+								{
+									"key": "lng",
+									"value": "{{$randomLongitude}}"
+								}
+							]
+						},
+						"description": "Returns the sunrise and sunset for a longitude and latitude."
+					},
+					"response": []
+				}
+			],
+			"_postman_id": "ba550f5f-140e-482c-908c-f8b9ee3d1825",
+			"description": "These are public API endpoints for sun.\n\n![sun](https://upload.wikimedia.org/wikipedia/commons/e/e3/Magnificent_CME_Erupts_on_the_Sun_-_August_31.jpg)",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "13576b61-0a27-4070-a5bc-f5b3f8c9e80f",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "a89140ec-9782-4ca3-9f36-805b26ed5931",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Text",
+			"item": [
+				{
+					"name": "SHOUTCLOUD",
+					"item": [
+						{
+							"name": "ALL CAPS AS A SERVICE",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "72b773ed-90b5-4539-808a-c521c69e3863",
+										"exec": [
+											"//to verify if the Output is generated in ALL CAPS\r",
+											"\r",
+											"var resp = pm.response.json();\r",
+											"var OUTPUT  = resp.OUTPUT;\r",
+											"console.log(OUTPUT);\r",
+											"\r",
+											"var LowerCaseText = pm.environment.get(\"randomText\");\r",
+											"var expectedOutput = LowerCaseText.toUpperCase();\r",
+											"\r",
+											"\r",
+											"pm.test(\"Output is generated in ALL CAPS\", function () {\r",
+											"    pm.expect(OUTPUT).to.eql(expectedOutput);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "28f53dac-e1cd-4dec-89f3-e901f123d236",
+										"exec": [
+											"pm.environment.set(\"randomText\", pm.variables.replaceIn('{{$randomLoremSentence}}'));\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"_postman_id": "569257b5-ecdf-4d20-9b03-52803773278e",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"INPUT\": \"{{randomText}}\"\n}",
+									"options": {
+										"raw": {}
+									}
+								},
+								"url": "HTTP://API.SHOUTCLOUD.IO/V1/SHOUT",
+								"description": "Capitalizes every letter for input set using body."
+							},
+							"response": []
+						}
+					],
+					"_postman_id": "00e37c0e-d86a-4797-93f8-79c4eb703bb4",
+					"_postman_isSubFolder": true
+				}
+			],
+			"_postman_id": "dc5dd8e4-6ac3-42ca-8587-c6a9338412a1",
+			"description": "These are public API endpoints for text.\n\n![text](https://upload.wikimedia.org/wikipedia/commons/1/18/Ornamental_Alphabet_-_16th_Century.svg)",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "31087944-ca77-4b39-94bb-11726f942e24",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "15888199-9eea-4d64-95c4-1bedb76a36a1",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Activities",
+			"item": [
+				{
+					"name": "Bored",
+					"_postman_id": "02810213-4444-4898-a48d-80345390833c",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "https://www.boredapi.com/api/activity",
+						"description": "Try to accomplish this activity one each day! this will give you a great feel!"
+					},
+					"response": []
+				}
+			],
+			"_postman_id": "fb797e1a-eaed-4618-a4fa-ba1448f98f5a"
+		},
+		{
+			"name": "Cryto Currency",
+			"item": [
+				{
+					"name": "Current Price",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "aa67ea5d-e9b3-432d-b014-26bb2452ff01",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"_postman_id": "bd9c1d3e-a9b4-4908-a0e6-b7182d62f3c5",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "https://api.coindesk.com/v1/bpi/currentprice.json"
+					},
+					"response": []
+				}
+			],
+			"_postman_id": "9f26b38f-63af-4d13-9628-fd46ff9587ee"
+		},
+		{
+			"name": "Random",
+			"item": [
+				{
+					"name": "Random User",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "3b3487d3-f62a-49bd-bbe5-92efb81bcffd",
+								"exec": [
+									"//Step 1: Define the Schema\r",
+									"\r",
+									"var schema = {\r",
+									"  \"type\": \"object\",\r",
+									"  \"properties\": {\r",
+									"    \"results\": {\r",
+									"      \"type\": \"array\",\r",
+									"      \"items\": [\r",
+									"        {\r",
+									"          \"type\": \"object\",\r",
+									"          \"properties\": {\r",
+									"            \"gender\": {\r",
+									"              \"type\": \"string\"\r",
+									"            },\r",
+									"            \"name\": {\r",
+									"              \"type\": \"object\",\r",
+									"              \"properties\": {\r",
+									"                \"title\": {\r",
+									"                  \"type\": \"string\"\r",
+									"                },\r",
+									"                \"first\": {\r",
+									"                  \"type\": \"string\"\r",
+									"                },\r",
+									"                \"last\": {\r",
+									"                  \"type\": \"string\"\r",
+									"                }\r",
+									"              },\r",
+									"              \"required\": [\r",
+									"                \"title\",\r",
+									"                \"first\",\r",
+									"                \"last\"\r",
+									"              ]\r",
+									"            },\r",
+									"            \"location\": {\r",
+									"              \"type\": \"object\",\r",
+									"              \"properties\": {\r",
+									"                \"street\": {\r",
+									"                  \"type\": \"object\",\r",
+									"                  \"properties\": {\r",
+									"                    \"number\": {\r",
+									"                      \"type\": \"integer\"\r",
+									"                    },\r",
+									"                    \"name\": {\r",
+									"                      \"type\": \"string\"\r",
+									"                    }\r",
+									"                  },\r",
+									"                  \"required\": [\r",
+									"                    \"number\",\r",
+									"                    \"name\"\r",
+									"                  ]\r",
+									"                },\r",
+									"                \"city\": {\r",
+									"                  \"type\": \"string\"\r",
+									"                },\r",
+									"                \"state\": {\r",
+									"                  \"type\": \"string\"\r",
+									"                },\r",
+									"                \"country\": {\r",
+									"                  \"type\": \"string\"\r",
+									"                },\r",
+									"                \"postcode\": {\r",
+									"                  \"type\": \"integer\"\r",
+									"                },\r",
+									"                \"coordinates\": {\r",
+									"                  \"type\": \"object\",\r",
+									"                  \"properties\": {\r",
+									"                    \"latitude\": {\r",
+									"                      \"type\": \"string\"\r",
+									"                    },\r",
+									"                    \"longitude\": {\r",
+									"                      \"type\": \"string\"\r",
+									"                    }\r",
+									"                  },\r",
+									"                  \"required\": [\r",
+									"                    \"latitude\",\r",
+									"                    \"longitude\"\r",
+									"                  ]\r",
+									"                },\r",
+									"                \"timezone\": {\r",
+									"                  \"type\": \"object\",\r",
+									"                  \"properties\": {\r",
+									"                    \"offset\": {\r",
+									"                      \"type\": \"string\"\r",
+									"                    },\r",
+									"                    \"description\": {\r",
+									"                      \"type\": \"string\"\r",
+									"                    }\r",
+									"                  },\r",
+									"                  \"required\": [\r",
+									"                    \"offset\",\r",
+									"                    \"description\"\r",
+									"                  ]\r",
+									"                }\r",
+									"              },\r",
+									"              \"required\": [\r",
+									"                \"street\",\r",
+									"                \"city\",\r",
+									"                \"state\",\r",
+									"                \"country\",\r",
+									"                \"postcode\",\r",
+									"                \"coordinates\",\r",
+									"                \"timezone\"\r",
+									"              ]\r",
+									"            },\r",
+									"            \"email\": {\r",
+									"              \"type\": \"string\"\r",
+									"            },\r",
+									"            \"login\": {\r",
+									"              \"type\": \"object\",\r",
+									"              \"properties\": {\r",
+									"                \"uuid\": {\r",
+									"                  \"type\": \"string\"\r",
+									"                },\r",
+									"                \"username\": {\r",
+									"                  \"type\": \"string\"\r",
+									"                },\r",
+									"                \"password\": {\r",
+									"                  \"type\": \"string\"\r",
+									"                },\r",
+									"                \"salt\": {\r",
+									"                  \"type\": \"string\"\r",
+									"                },\r",
+									"                \"md5\": {\r",
+									"                  \"type\": \"string\"\r",
+									"                },\r",
+									"                \"sha1\": {\r",
+									"                  \"type\": \"string\"\r",
+									"                },\r",
+									"                \"sha256\": {\r",
+									"                  \"type\": \"string\"\r",
+									"                }\r",
+									"              },\r",
+									"              \"required\": [\r",
+									"                \"uuid\",\r",
+									"                \"username\",\r",
+									"                \"password\",\r",
+									"                \"salt\",\r",
+									"                \"md5\",\r",
+									"                \"sha1\",\r",
+									"                \"sha256\"\r",
+									"              ]\r",
+									"            },\r",
+									"            \"dob\": {\r",
+									"              \"type\": \"object\",\r",
+									"              \"properties\": {\r",
+									"                \"date\": {\r",
+									"                  \"type\": \"string\"\r",
+									"                },\r",
+									"                \"age\": {\r",
+									"                  \"type\": \"integer\"\r",
+									"                }\r",
+									"              },\r",
+									"              \"required\": [\r",
+									"                \"date\",\r",
+									"                \"age\"\r",
+									"              ]\r",
+									"            },\r",
+									"            \"registered\": {\r",
+									"              \"type\": \"object\",\r",
+									"              \"properties\": {\r",
+									"                \"date\": {\r",
+									"                  \"type\": \"string\"\r",
+									"                },\r",
+									"                \"age\": {\r",
+									"                  \"type\": \"integer\"\r",
+									"                }\r",
+									"              },\r",
+									"              \"required\": [\r",
+									"                \"date\",\r",
+									"                \"age\"\r",
+									"              ]\r",
+									"            },\r",
+									"            \"phone\": {\r",
+									"              \"type\": \"string\"\r",
+									"            },\r",
+									"            \"cell\": {\r",
+									"              \"type\": \"string\"\r",
+									"            },\r",
+									"            \"id\": {\r",
+									"              \"type\": \"object\",\r",
+									"              \"properties\": {\r",
+									"                \"name\": {\r",
+									"                  \"type\": \"string\"\r",
+									"                },\r",
+									"                \"value\": {\r",
+									"                  \"type\": \"null\"\r",
+									"                }\r",
+									"              },\r",
+									"              \"required\": [\r",
+									"                \"name\",\r",
+									"                \"value\"\r",
+									"              ]\r",
+									"            },\r",
+									"            \"picture\": {\r",
+									"              \"type\": \"object\",\r",
+									"              \"properties\": {\r",
+									"                \"large\": {\r",
+									"                  \"type\": \"string\"\r",
+									"                },\r",
+									"                \"medium\": {\r",
+									"                  \"type\": \"string\"\r",
+									"                },\r",
+									"                \"thumbnail\": {\r",
+									"                  \"type\": \"string\"\r",
+									"                }\r",
+									"              },\r",
+									"              \"required\": [\r",
+									"                \"large\",\r",
+									"                \"medium\",\r",
+									"                \"thumbnail\"\r",
+									"              ]\r",
+									"            },\r",
+									"            \"nat\": {\r",
+									"              \"type\": \"string\"\r",
+									"            }\r",
+									"          },\r",
+									"          \"required\": [\r",
+									"            \"gender\",\r",
+									"            \"name\",\r",
+									"            \"location\",\r",
+									"            \"email\",\r",
+									"            \"login\",\r",
+									"            \"dob\",\r",
+									"            \"registered\",\r",
+									"            \"phone\",\r",
+									"            \"cell\",\r",
+									"            \"id\",\r",
+									"            \"picture\",\r",
+									"            \"nat\"\r",
+									"          ]\r",
+									"        }\r",
+									"      ]\r",
+									"    },\r",
+									"    \"info\": {\r",
+									"      \"type\": \"object\",\r",
+									"      \"properties\": {\r",
+									"        \"seed\": {\r",
+									"          \"type\": \"string\"\r",
+									"        },\r",
+									"        \"results\": {\r",
+									"          \"type\": \"integer\"\r",
+									"        },\r",
+									"        \"page\": {\r",
+									"          \"type\": \"integer\"\r",
+									"        },\r",
+									"        \"version\": {\r",
+									"          \"type\": \"string\"\r",
+									"        }\r",
+									"      },\r",
+									"      \"required\": [\r",
+									"        \"seed\",\r",
+									"        \"results\",\r",
+									"        \"page\",\r",
+									"        \"version\"\r",
+									"      ]\r",
+									"    }\r",
+									"  },\r",
+									"  \"required\": [\r",
+									"    \"results\",\r",
+									"    \"info\"\r",
+									"  ]\r",
+									"};\r",
+									"\r",
+									"\r",
+									"//Step 2: Validate response against schema\r",
+									"const response = pm.response.json();\r",
+									"    pm.test('Schema is valid', () => {\r",
+									"        pm.expect(response).to.have.jsonSchema(schema);\r",
+									"    });\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"_postman_id": "84ac5fc2-786a-4a63-8f1e-95bf08705350",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "https://randomuser.me/api/"
+					},
+					"response": []
+				}
+			],
+			"_postman_id": "42062e41-4723-4761-bd8b-4aee06cd658d"
+		},
+		{
+			"name": "New Request",
+			"_postman_id": "b2930315-c882-4273-9470-21ad3fa03a53",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": null
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "bc78a7ea-8836-43f9-bba6-df752cbe23cb",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "2ce367bf-096b-4c66-8b40-80276ef4c475",
+				"type": "text/javascript",
+				"exec": [
+					"//basic assertion to verify the status code is as expected",
+					"// pm.test(\"Status code is 200\", function () {",
+					"//     pm.response.to.have.status(200);",
+					"// });",
+					"",
+					"// pm.test(\"Status code is OK\", function () {",
+					"//     pm.response.to.have.status('OK');",
+					"// });",
+					"",
+					"// pm.test(\"Response time is less than 200ms\", function () {",
+					"//     pm.expect(pm.response.responseTime).to.be.below(500);",
+					"// });"
+				]
+			}
+		}
+	]
+}
